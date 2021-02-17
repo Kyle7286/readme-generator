@@ -1,5 +1,7 @@
 const fs = require('fs');
+const util = require('util');
 const inquirer = require('inquirer');
+const writeFileAsync = util.promisify(fs.writeFile);
 
 
 
@@ -26,7 +28,8 @@ const promptUser = () => {
             name: 'description',
         },
         {
-            type: 'input',
+            type: 'list',
+            choices: ["a", "b", "c"],
             message: 'What kind of license should your project have?',
             name: 'license',
         },
@@ -47,44 +50,44 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            message: 'What does the user need to know about using the repo?',
+            message: 'What does the user need to know about contributing to the repo?',
             name: 'contributeRepo',
         },
-
-
     ]);
 }
-inquirer
-    .prompt([
-        {
-            type: 'input',
-            message: 'What is your name?',
-            name: 'name',
-        },
-        {
-            type: 'input',
-            message: 'Where are you located?',
-            name: 'location',
-        },
-        {
-            type: 'input',
-            message: 'Short bio?',
-            name: 'bio',
-        },
-        {
-            type: 'input',
-            message: 'Linkedin URL?',
-            name: 'linkedin',
-        },
-        {
-            type: 'input',
-            message: 'Github URL?',
-            name: 'github',
-        },
-    ]).then((response) =>
-        fs.writeFile(
-            `./README.md`, `Hello Readme`, (err) => err ? console.log("There was an error!") : console.log("Successfully appended to file!")
+
+const generateReadme = ({
+    username,
+    email,
+    projectname,
+    description,
+    license,
+    dependencies,
+    tests,
+    usingRepo,
+    contributeRepo
+}) => {
+    return `
+# ${username}
+# ${email}
+# ${projectname}
+# ${description}
+# ${license}
+# ${dependencies}
+# ${tests}
+# ${username}
+# ${usingRepo}
+# ${contributeRepo}`
+}
 
 
-        )
-    );
+const init = () => {
+    promptUser().then(response => {
+        const readme = generateReadme(response);
+        writeFileAsync("README.md", readme)
+            .then(() => console.log("Success"))
+            .catch(err => console.log(err));
+    });
+}
+
+init()
