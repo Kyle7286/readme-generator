@@ -1,10 +1,11 @@
+// require libraries
 const fs = require('fs');
 const util = require('util');
 const inquirer = require('inquirer');
+// convert writeFile (from FS) to async
 const writeFileAsync = util.promisify(fs.writeFile);
 
-
-
+// prompt user data
 const promptUser = () => {
     return inquirer.prompt([
         {
@@ -29,7 +30,7 @@ const promptUser = () => {
         },
         {
             type: 'list',
-            choices: ["a", "b", "c"],
+            choices: ["APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
             message: 'What kind of license should your project have?',
             name: 'license',
         },
@@ -56,6 +57,7 @@ const promptUser = () => {
     ]);
 }
 
+// Build readme string 
 const generateReadme = ({
     username,
     email,
@@ -67,19 +69,55 @@ const generateReadme = ({
     usingRepo,
     contributeRepo
 }) => {
-    return `
-# ${username}
-# ${email}
-# ${projectname}
-# ${description}
-# ${license}
-# ${dependencies}
-# ${tests}
-# ${username}
-# ${usingRepo}
-# ${contributeRepo}`
-}
+    
+    let  badge = "";
+    // Add the badge syntax for the appropriate license selected
+    if (license === "APACHE 2.0") {badge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`}
+    if (license === "GPL 3.0") {badge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`}
+    if (license === "BSD 3") {badge = `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`}
+    if (license === "None") {badge = `*This project is not licensed*`}
 
+     
+    return `
+# ${projectname} 
+${badge}
+
+## Description 🔖
+${description}
+
+## Table of Contents 📗
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Questions](#questions)
+
+## Installation 💿
+
+Install these dependencies:
+\`\`\`
+${dependencies}
+\`\`\`
+
+## Usage 👇
+${usingRepo}
+
+## License 🔑
+This project is licensed under ${license}
+
+## Contributing 🙋
+${contributeRepo}
+
+## Tests 🔎
+\`\`\`
+${tests}
+\`\`\`
+
+## Questions ❓
+* ${username}
+* ${email}
+`
+}
 
 const init = () => {
     promptUser().then(response => {
@@ -90,4 +128,5 @@ const init = () => {
     });
 }
 
+// Run script on call
 init()
