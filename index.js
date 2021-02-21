@@ -82,38 +82,38 @@ const generateReadme = ({
 # ${projectname} 
 ${badge}
 
-## Description 🔖
+## Description🔖
 ${description}
 
-## Table of Contents 📗
+## Table of Contents📗
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
 * [Questions](#questions)
 
-## Installation 💿
+## Installation💿
 
 Install these dependencies:
 \`\`\`
 ${dependencies}
 \`\`\`
 
-## Usage 👇
+## Usage👇
 ${usingRepo}
 
-## License 🔑
+## License🔑
 This project is licensed under ${license}
 
-## Contributing 🙋
+## Contributing🙋
 ${contributeRepo}
 
-## Tests 🔎
+## Tests🔎
 \`\`\`
 ${tests}
 \`\`\`
 
-## Questions ❓
+## Questions❓
 * ${username}
 * ${email}
 `
@@ -122,7 +122,7 @@ ${tests}
 const init = () => {
     promptUser().then(response => {
         const readme = generateReadme(response);
-        writeFileAsync("README.md", readme)
+        writeFileAsync("./generated/README.md", readme)
             .then(() => console.log("Success"))
             .catch(err => console.log(err));
     });

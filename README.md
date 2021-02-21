@@ -1,38 +1,36 @@
+# Readme Generator
 
-# asdf 
-*This project is not licensed*
+## General 📖
+---    
+- Author:         Brandon Haley
+- Email:          Kyle7286@gmail.com
+- Github:         https://github.com/Kyle7286/
 
-## Description 🔖
-asdf
+## About/Purpose ❔
+---
+The purpose of this application is to generate a readme automatically with the input from the user to gain efficiencies and consistency.
 
-## Table of Contents 📗
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Questions](#questions)
+## How to Use
+---
+1. node index
+2. provide your input for all prompts
+3. locate the readme located in the "generated" folder
 
-# Installation💿
+## Takeaways 🥡
+--- 
+* Gained more confidence using node js
+* Learned the usefulness of async function 
+* Learned about license badges
+* Realized the power of temporal literals
 
-Install these dependencies:
-```
-asdf
-```
+## Screenshot/Gif 📊
+---
+![Gif](./images/reademe-generator.gif)
 
-# Usage👇
-sdaf
+![Image](./images/readme-generator.png)
 
-# License🔑
-This project is licensed under None
-
-# Contributing🙋
+## Thank you 👍 
+---
+Thank you for your time reviewing my project/code!
 
 
-# Tests🔎
-```
-sadf
-```
-
-# Questions❓
-* adsf
-* dsfa
