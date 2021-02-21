@@ -6,11 +6,11 @@
 asdf
 
 ## Table of Contents 📗
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Questions](#questions)
+* [Installation](##installation)
+* [Usage](##usage)
+* [License](##license)
+* [Contributing](##contributing)
+* [Questions](##questions)
 
 ## Installation 💿
 
