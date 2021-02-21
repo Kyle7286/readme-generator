@@ -86,35 +86,35 @@ ${badge}
 ${description}
 
 ## Table of Contents📗
-* [Installation](#installation💿)
-* [Usage](#usage👇)
-* [License](#license🔑)
-* [Contributing](#contributing🙋)
-* [Tests](#tests🔎)
-* [Questions](#questions❓)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-## Installation💿
+## Installation
 
 Install these dependencies:
 \`\`\`
 ${dependencies}
 \`\`\`
 
-## Usage👇
+## Usage
 ${usingRepo}
 
-## License🔑
+## License
 This project is licensed under ${license}
 
-## Contributing🙋
+## Contributing
 ${contributeRepo}
 
-## Tests🔎
+## Tests
 \`\`\`
 ${tests}
 \`\`\`
 
-## Questions❓
+## Questions
 * For any questions, please contact me at ${email}.
 * You can find me on GitHub as ${username}.
 `
