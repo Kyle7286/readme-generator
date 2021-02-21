@@ -69,15 +69,15 @@ const generateReadme = ({
     usingRepo,
     contributeRepo
 }) => {
-    
-    let  badge = "";
-    // Add the badge syntax for the appropriate license selected
-    if (license === "APACHE 2.0") {badge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`}
-    if (license === "GPL 3.0") {badge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`}
-    if (license === "BSD 3") {badge = `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`}
-    if (license === "None") {badge = `*This project is not licensed*`}
 
-     
+    let badge = "";
+    // Add the badge syntax for the appropriate license selected
+    if (license === "APACHE 2.0") { badge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)` }
+    if (license === "GPL 3.0") { badge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)` }
+    if (license === "BSD 3") { badge = `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)` }
+    if (license === "None") { badge = `*This project is not licensed*` }
+
+
     return `
 # ${projectname} 
 ${badge}
@@ -86,11 +86,12 @@ ${badge}
 ${description}
 
 ## Table of Contents📗
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Questions](#questions)
+* [Installation](#installation💿)
+* [Usage](#usage👇)
+* [License](#license🔑)
+* [Contributing](#contributing🙋)
+* [Tests](#tests🔎)
+* [Questions](#questions❓)
 
 ## Installation💿
 
@@ -114,8 +115,8 @@ ${tests}
 \`\`\`
 
 ## Questions❓
-* ${username}
-* ${email}
+* For any questions, please contact me at ${email}.
+* You can find me on GitHub as ${username}.
 `
 }
 
